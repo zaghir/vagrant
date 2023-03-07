@@ -1,0 +1,15 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+RAM = 2048
+CPU = 2
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "geerlingguy/centos7"
+  # https://developer.hashicorp.com/vagrant/docs/providers/virtualbox/configuration
+  # 2 cpu and 2048 of ram
+  config.vm.provider "virtualbox" do |v|
+    v.memory = RAM
+    v.cpus = CPU
+  end
+end
